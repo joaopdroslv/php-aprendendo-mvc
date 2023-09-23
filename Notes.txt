@@ -1,0 +1,10 @@
+IMPORTANTE: Instalar composer "getcomposer.org"
+    - Baixar o instalador
+    - Next até o acabar
+    - Não precisa instalar no projeto****
+
+Para dia 06/10
+    - Criar as entidades
+        - Namespaces
+        - Atributos
+        - Gets e Sets

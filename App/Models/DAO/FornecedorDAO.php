@@ -49,8 +49,12 @@ class FornecedorDAO extends BaseDAO
             $id = $fornecedor->getId();
             $nome = $fornecedor->getNome();
 
-            return $this->update("fornecedor", "nome = :nome", 
-                                    [":id" => $id, ":nome" => $nome], "id = :id");
+            return $this->update(
+                "fornecedor",
+                "nome = :nome",
+                [":id" => $id, ":nome" => $nome],
+                "id = :id"
+            );
         } catch (\Exception $e) {
             throw new \Exception("Erro na atualização dos dados. " . $e->getMessage(), 500);
         }
@@ -58,6 +62,10 @@ class FornecedorDAO extends BaseDAO
 
     public function excluir(int $id)
     {
-
+        try {
+            return $this->delete("fornecedor", "id = $id");
+        } catch (\Exception $e) {
+            throw new \Exception("Erro ao excluir o fornecedor." . $e->getMessage(), 500);
+        }
     }
 }

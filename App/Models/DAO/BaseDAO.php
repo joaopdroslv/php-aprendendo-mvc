@@ -64,6 +64,17 @@ abstract class BaseDAO
 
     public function delete($table, $where)
     {
+        if (!empty($table)) {
+            if ($where) {
+                $where = "WHERE $where";
+            }
 
+            $stmt = $this->conexao->prepare("DELETE FROM $table $where");
+            $stmt->execute();
+
+            return $stmt->rowCount();
+        } else {
+            return false;
+        }
     }
 }

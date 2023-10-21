@@ -1,4 +1,4 @@
-<p> </p>
+<p> </p>
     <footer class="footer">
         <div class="container">
             <p class="text-muted">Copyright  © FATEC Presidente Prudente <?= date('Y') ?>.</p>
